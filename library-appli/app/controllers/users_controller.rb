@@ -11,4 +11,5 @@ class UsersController < ApplicationController
 	  # @image = item['smallImageUrl']
 	  # end
 	end
+
 end
