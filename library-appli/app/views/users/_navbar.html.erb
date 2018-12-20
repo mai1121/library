@@ -1,0 +1,14 @@
+<nav>
+    <div class="nav-wrapper teal darken-4">
+      <a href="#" class="brand-logo">本棚</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      	<% if user_signed_in? %>
+        <li><%= link_to 'ログアウト',"/users/sign_out", method: :delete %></li>
+        <li><a href="/users/<%= current_user.id %>">自分の本棚</a></li>
+        <% else %>
+        <li><%= link_to 'ログイン',"/users/sign_in"%></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+
