@@ -1,3 +1,11 @@
 <div class="test">
-    鵜川真衣
+	<% @items.each do |item| %>
+		<%=item['itemName']%>
+		<%=item['itemPrice']%>
+		<%=item['itemUrl']%>
+		<%=item['smallImageUrl']%>
+    <img src="<%=item['mediumImageUrls']%>"> 
+	<% end %>
+    
 </div>
+
