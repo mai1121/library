@@ -5,6 +5,7 @@
       	<% if user_signed_in? %>
         <li><%= link_to 'ログアウト',"/users/sign_out", method: :delete %></li>
         <li><a href="/users/<%= current_user.id %>">自分の本棚</a></li>
+        <li><%= link_to '投稿する',"/posts/new"%></li>
         <% else %>
         <li><%= link_to 'ログイン',"/users/sign_in"%></li>
         <% end %>
