@@ -1,7 +1,7 @@
 <%= render partial: "navbar"%>
 <div class="contents row" >
-    <% @posts.each do |post| %>
-    <a href="/posts/<%=post.id%>"><%=post.quote%></a>
+    <% @users.each do |user| %>
+    <a href="/users/<%=user.id%>"><%=user.nickname%></a>
     
       
     <% end %>
