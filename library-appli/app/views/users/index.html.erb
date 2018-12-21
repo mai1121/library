@@ -1,1 +1,8 @@
 <%= render partial: "navbar"%>
+<div class="contents row" >
+    <% @posts.each do |post| %>
+    <a href="/posts/<%=post.id%>"><%=post.quote%></a>
+    
+      
+    <% end %>
+  </div>
