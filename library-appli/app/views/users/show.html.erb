@@ -1,16 +1,14 @@
-<%= render partial: "navbar"%>
+<%= render partial: "navbar",locals: {user: @user}%>
 <div class="contents row" >
-    <% @posts.each do |post| %>
-    <a class = "modal-open" data-title="<%=post.title%>" data-author="<%=post.author%>" data-quote="<%=post.quote%>" data-comment="<%=post.comment%>"><%=post.quote%></a>
-    <%=post.title%>
+    <% @posts.zip(@items) do |post,item| %>
+    <a class = "modal-open" data-title="<%=post.title%>" data-author="<%=post.author%>" data-quote="<%=post.quote%>" data-comment="<%=post.comment%>" data-image="<%=item[:image]%>" data-url="<%=item[:url]%>"><%=post.quote%></a>
     <% end %>
-    <%=@item%>
-    <img src="<%=@item%>">
-    <!-- <%= image_tag "@item"%> -->
+
+
     <div id = "modal-main">
-    	<div class="rakuten-image">
-    		
-    	</div>
+        <div class="item-image-area">
+            <img src="">
+        </div>
     	<div class="title-area">
     		
     	</div>
@@ -23,5 +21,8 @@
     	<div class="comment-area">
     		
     	</div>
+        <div class="rakuten-link">
+            
+        </div>
     </div>
   </div>

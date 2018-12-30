@@ -1,4 +1,4 @@
-<%= render partial: "navbar"%>
+<%= render partial: "navbar",locals: {user: ""}%>
 <div class="contents row" >
     <% @users.each do |user| %>
     <a href="/users/<%=user.id%>"><%=user.nickname%></a>
