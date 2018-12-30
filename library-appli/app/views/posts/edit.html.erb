@@ -1,0 +1,23 @@
+<div class="edit-content">
+  <%= form_for (@post) do |f|%>
+  <div class="title-form">
+    <p class="title-form-text">本のタイトルを入力してください</p>  
+    <%= f.text_field :title, placeholder: "入力してください", value: "#{@post.title}",class: "form-title"%>
+  </div>
+  <div class="author-form">
+    <p class="author-form-text">本の著者を入力してください</p>
+    <%= f.text_field :author, placeholder: "入力してください", value: "#{@post.author}",class: "form-author"%>
+  </div>
+  <div class="quote-form">
+    <p class="quote-form-text">好きな一節を入力してください</p>
+    <%= f.text_field :quote, placeholder: "入力してください", value: "#{@post.quote}",class: "form-quote"%>
+  </div>
+  <div class="comment-form">
+    <p class="comment-form-text">感じたことなど自由記入欄</p>
+    <%= f.text_field :comment, placeholder: "入力してください", value: "#{@post.comment}",class: "form-comment"%>
+  </div>  
+  <%= button_tag type: "submit", class: "btn btn--block" do %>
+              保存する<i class="icon-arrow-right"></i>
+    <% end %>
+  <% end %>
+</div>
