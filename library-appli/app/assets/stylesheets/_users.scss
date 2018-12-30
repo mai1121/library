@@ -6,3 +6,32 @@
 body{
 	font-family: "ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", HGS明朝E, "ＭＳ Ｐ明朝";
 }
+
+.modal-open{
+	cursor: pointer;
+}
+
+
+/* モーダル コンテンツエリア */
+#modal-main{
+	display: none;
+	width: 500px;
+	height: 300px;
+	margin: 0;
+	padding: 0;
+	background-color: #004400;
+	color: #ffffff;
+	position: fixed;
+	z-index: 2;
+}
+/* モーダル 背景エリア */
+#modal-bg{
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}

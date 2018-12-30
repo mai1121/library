@@ -59,3 +59,12 @@ gem 'devise'
 gem 'mechanize'
 
 gem 'rakuten_web_service'
+
+gem 'omniauth-facebook'
+
+gem 'omniauth-twitter'
+
+gem 'omniauth-google-oauth2'
+
+
+

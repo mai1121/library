@@ -1,4 +1,4 @@
 RakutenWebService.configure do |c|
-    c.application_id = '1083671639472123362'
-    c.affiliate_id = '1789e5bb.c13ebdd9.1789e5be.203a9a97'#任意
+    c.application_id = ENV['Rakuten_API_KEY']
+    c.affiliate_id = ENV['Rakuten_AFL_KEY']
 end
