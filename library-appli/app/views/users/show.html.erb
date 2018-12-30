@@ -1,11 +1,27 @@
 <%= render partial: "navbar",locals: {user: @user}%>
-<div class="contents row" >
+<div class="contents" >
     <% @posts.zip(@items) do |post,item| %>
-    <a class = "modal-open" data-title="<%=post.title%>" data-author="<%=post.author%>" data-quote="<%=post.quote%>" data-comment="<%=post.comment%>" data-image="<%=item[:image]%>" data-url="<%=item[:url]%>"><%=post.quote%></a>
+        <div class="post-content clearfix">
+            <a class = "modal-open" data-title="<%=post.title%>" data-author="<%=post.author%>" data-quote="<%=post.quote%>" data-comment="<%=post.comment%>" data-image="<%=item[:image]%>" data-url="<%=item[:url]%>"><%=post.quote%></a>
+
+            <% if user_signed_in? && current_user.id == post.user_id%>
+                <div class="user_menu">
+                    <ul>
+                        <li>
+                            <%= link_to '編集',"/posts/#{post.id}/edit", method: :get%>
+                        </li>
+                        <li>
+                            <%= link_to '削除',"/posts/#{post.id}", method: :destroy%>
+                        </li>
+                    </ul>
+                </div>
+            <% end %>
+
+        </div>
     <% end %>
 
 
-    <div id = "modal-main">
+    <div id = "modal-main">        
         <div class="item-image-area">
             <img src="">
         </div>
