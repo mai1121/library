@@ -7,15 +7,22 @@ $(document).on('turbolinks:load', function() {
 			$(".author-area").empty();
 			$(".quote-area").empty();
 			$(".comment-area").empty();
+			$(".item-image-area").empty();
+			$(".rakuten-link").empty();
 			// モーダルに表示したい情報を定義
 			var title = $(this).attr("data-title");
 			var author = $(this).attr("data-author");
 			var quote = $(this).attr("data-quote");
 			var comment = $(this).attr("data-comment");
+			var image = $(this).attr("data-image");
+			var url = $(this).attr("data-url");
+			console.log();
 			$(".title-area").append(title);
 			$(".author-area").append(author);
 			$(".quote-area").append(quote);
 			$(".comment-area").append(comment);
+			$(".item-image-area").append(`<img src="${image}">`);
+			$(".rakuten-link").append(`<a href="${url}">商品詳細</a>`);
 			// bodyの最後に背景エリアのHTMLを追加
 			$("body").append('<div id = "modal-bg"></div>');
 			// 画面中央を計算する関数を呼び出し
