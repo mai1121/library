@@ -10,19 +10,20 @@ class UsersController < ApplicationController
         # ユーザーの投稿のタイトルを配列形式で格納
         # keywords = user.posts.title
         # # タイトルの配列を引数にして検索メソッドを呼び出し
-        # @items = search_rakuten_api(keywords)  
+        @item = search_rakuten_api("海辺のカフカ")  
 	end
 
 
-	# def search_rakuten_api(keywords)
-	# 	# 検索結果格納する空の配列を定義
-	# 	search_items = []
-	# 	keywords.each do |keyword|
-	# 		item = RakutenWebService::Ichiba::Item.search(keyword: keyword).first
-	# 		search_items << item
-	# 	end
-	# 	# 配列を返す
-	# 	return search_items
-	# end
+	def search_rakuten_api(keyword)
+		# 検索結果格納する空の配列を定義
+		# search_items = []
+		# keywords.each do |keyword|
+			item = RakutenWebService::Books::Book.search(title: keyword).first
+			item_image = item['smallImageUrl']
+			# search_items << item
+		# end
+		# 配列を返す
+		# return search_items
+	end
 
 end
