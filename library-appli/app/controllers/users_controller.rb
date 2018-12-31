@@ -17,7 +17,6 @@ class UsersController < ApplicationController
 		search_items = []
 		keywords.each do |keyword|
 			item = RakutenWebService::Books::Book.search(title: keyword[:title],author: keyword[:author]).first
-      # binding.pry
       if item.nil? 
         item_image = ""
         item_url = ""
