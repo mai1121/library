@@ -4,11 +4,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_for(:facebook)
   end
 
-  # callback for twitter
-  def twitter
-    callback_for(:twitter)
-  end
-
   # callback for google
   def google_oauth2
     callback_for(:google)
@@ -17,6 +12,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # common callback method
   def callback_for(provider)
     @user = User.from_omniauth(request.env["omniauth.auth"])
+    # binding.pry
     if @user.persisted?
       sign_in_and_redirect @user, event: :authentication #this will throw if @user is not activated
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
@@ -28,7 +24,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def after_sign_in_path_for(resource)
-    user_path
+    user_path(resource)
   end
 
   def failure
