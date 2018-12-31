@@ -1,8 +1,25 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.post-content{
+  border: 1px solid black;
+  background-color: #fff;
+  display: inline-block;
+}
+
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.edit-content{
+  background-color: #fff;
+}
+
 .input{
+  background-color: #fff;
   p{
-    color: #fff;
+    color: black;
   }
 }

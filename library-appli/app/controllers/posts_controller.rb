@@ -21,6 +21,11 @@ class PostsController < ApplicationController
 	def update
 	end
 
+	def destroy
+		post = Post.find(params[:id])
+		post.destroy if post.user_id == current_user.id
+	end
+
 	
 	# ストロングパラメータを設定
 	 def post_params
