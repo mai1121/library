@@ -11,7 +11,7 @@
                             <%= link_to '編集',"/posts/#{post.id}/edit", method: :get%>
                         </li>
                         <li>
-                            <%= link_to '削除',"/posts/#{post.id}", method: :delete%>
+                            <%= link_to '削除',"/posts/#{post.id}", method: :delete, class: "post_delete", data: {confirm: "本当に削除しますか？"}%>
                         </li>
                     </ul>
                 </div>
