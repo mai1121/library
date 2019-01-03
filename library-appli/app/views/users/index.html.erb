@@ -1,8 +1,8 @@
-<%= render partial: "navbar",locals: {user: ""}%>
+<div class="top-wrapper">
+  <%= render partial: "navbar",locals: {user: ""}%>
 <div class="top-page" >
     <% @users.each do |user| %>
-    <a href="/users/<%=user.id%>"><%=user.nickname%>さんの本棚</a>
-    
-      
+    <a href="/users/<%=user.id%>"><%=user.nickname%>さんの本棚</a>  
     <% end %>
   </div>
+</div>
