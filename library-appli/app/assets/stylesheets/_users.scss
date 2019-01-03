@@ -1,20 +1,16 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-html{
-	// height: 100%;
-}
 
 body{
 	font-family: "ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", HGS明朝E, "ＭＳ Ｐ明朝";
 	background: url("/library.jpeg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	// height: 100%;
 }
 
-.top-page{
-	writing-mode: vertical-rl;
+.top-wrapper{
+	height: 100vh;
 }
 
 .top-page a{
@@ -23,13 +19,14 @@ body{
 	padding: 5px;
 }
 
+.login-wrapper{
+	background-color: #fff;
+}
 
 .contents{
 	padding: 20px 20px 0;
 	text-align: center;
 	margin: 0;
-	// background: url("/library.jpeg");
-	// background-repeat: no-repeat;
 	background-color: #550000;
 }
 
